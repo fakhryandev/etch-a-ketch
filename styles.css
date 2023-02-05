@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  height: 100vh;
+}
+
+.title {
+  font-family: "Itim", cursive;
+  font-size: 48px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 500px;
+  height: 500px;
+}
+
+.board-item {
+  height: 100%;
+  width: 100%;
+  border: 2px dotted rgba(218, 214, 214, 0.925);
+}
+
+.board-item-active {
+  background-color: red;
+}
