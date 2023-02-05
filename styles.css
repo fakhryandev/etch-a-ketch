@@ -25,7 +25,7 @@
 .board-item {
   height: 100%;
   width: 100%;
-  border: 2px dotted rgba(218, 214, 214, 0.925);
+  border: 2px dotted rgba(218, 214, 214, 0.473);
 }
 
 .board-item-active {
