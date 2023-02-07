@@ -45,14 +45,14 @@
 
 .board {
   display: grid;
-  width: 500px;
-  height: 500px;
+  width: 700px;
+  height: 700px;
 }
 
 .board-tile {
   height: 100%;
   width: 100%;
-  border: 2px dotted rgba(218, 214, 214, 0.473);
+  border: 1px solid rgba(218, 214, 214, 0.473);
 }
 
 .board-tile:hover {
