@@ -4,6 +4,7 @@ const mediumSize = 32;
 const bigSize = 64;
 
 let currentSize = smallSize;
+let currentMode = "color";
 
 document.addEventListener("DOMContentLoaded", () => {
   const btnSmall = document.getElementById("small");
@@ -15,9 +16,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const clearButton = document.getElementById("clearButton");
+const eraserButton = document.getElementById("eraserButton");
+const colorButton = document.getElementById("colorButton");
 
 clearButton.addEventListener("click", (e) => {
   createBoardItem(currentSize);
+});
+
+eraserButton.addEventListener("click", (e) => {
+  setCurrentMode("eraser");
+});
+
+colorButton.addEventListener("click", (e) => {
+  setCurrentMode("color");
 });
 
 let mouseDown = false;
@@ -37,10 +48,18 @@ const createBoardItem = (size) => {
   }
 };
 
+const setCurrentMode = (mode) => {
+  currentMode = mode;
+};
+
 const changeColor = (e) => {
   if (e.type === "mouseover" && !mouseDown) return;
 
-  e.target.style.backgroundColor = "#000";
+  if (currentMode === "color") {
+    e.target.style.backgroundColor = "#000";
+  } else if (currentMode === "eraser") {
+    e.target.style.backgroundColor = "transparent";
+  }
 };
 
 const clearGrid = () => {
