@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const clearButton = document.getElementById("clearButton");
 const eraserButton = document.getElementById("eraserButton");
 const colorButton = document.getElementById("colorButton");
+const rainbowButton = document.getElementById("rainbowButton");
 
 clearButton.addEventListener("click", (e) => {
   createBoardItem(currentSize);
@@ -29,6 +30,10 @@ eraserButton.addEventListener("click", (e) => {
 
 colorButton.addEventListener("click", (e) => {
   setCurrentMode("color");
+});
+
+rainbowButton.addEventListener("click", (e) => {
+  setCurrentMode("rainbow");
 });
 
 let mouseDown = false;
@@ -57,6 +62,12 @@ const changeColor = (e) => {
 
   if (currentMode === "color") {
     e.target.style.backgroundColor = "#000";
+  } else if (currentMode === "rainbow") {
+    const randomRed = Math.floor(Math.random() * 256);
+    const randomGreen = Math.floor(Math.random() * 256);
+    const randomBlue = Math.floor(Math.random() * 256);
+
+    e.target.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
   } else if (currentMode === "eraser") {
     e.target.style.backgroundColor = "transparent";
   }
