@@ -16,24 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const clearButton = document.getElementById("clearButton");
-const eraserButton = document.getElementById("eraserButton");
-const colorButton = document.getElementById("colorButton");
-const rainbowButton = document.getElementById("rainbowButton");
 
 clearButton.addEventListener("click", (e) => {
   createBoardItem(currentSize);
-});
-
-eraserButton.addEventListener("click", (e) => {
-  setCurrentMode("eraser");
-});
-
-colorButton.addEventListener("click", (e) => {
-  setCurrentMode("color");
-});
-
-rainbowButton.addEventListener("click", (e) => {
-  setCurrentMode("rainbow");
 });
 
 let mouseDown = false;
@@ -83,7 +68,7 @@ const changeButtonActive = (buttonById) => {
   buttonById.classList.add("btn-active");
 };
 
-const changeButton = (id) => {
+const changeButtonSize = (id) => {
   const buttonById = document.getElementById(id);
 
   buttonById.addEventListener("click", (e) => {
@@ -96,8 +81,22 @@ const changeButton = (id) => {
   });
 };
 
+const changeMode = (id) => {
+  const buttonById = document.getElementById(id);
+
+  buttonById.addEventListener("click", (e) => {
+    setCurrentMode(id);
+  });
+};
+
 const buttonSize = document.querySelectorAll("button.btn-size");
 buttonSize.forEach((button) => {
   const id = button.id;
-  changeButton(id);
+  changeButtonSize(id);
+});
+
+const buttonMode = document.querySelectorAll("button.btn-mode");
+buttonMode.forEach((button) => {
+  const id = button.id;
+  changeMode(id);
 });
