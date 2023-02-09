@@ -22,7 +22,7 @@
   gap: 22px;
 }
 
-.button-size-wrapper {
+.button-wrapper {
   display: flex;
   width: 50%;
   justify-content: space-around;

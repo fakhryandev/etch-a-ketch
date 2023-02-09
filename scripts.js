@@ -3,13 +3,21 @@ const smallSize = 16;
 const mediumSize = 32;
 const bigSize = 64;
 
+let currentSize = smallSize;
+
 document.addEventListener("DOMContentLoaded", () => {
   const btnSmall = document.getElementById("small");
   btnSmall.classList.add("btn-active");
-  board.style.gridTemplateColumns = `repeat(${smallSize}, 1fr)`;
-  board.style.gridTemplateRows = `repeat(${smallSize}, 1fr)`;
+  board.style.gridTemplateColumns = `repeat(${currentSize}, 1fr)`;
+  board.style.gridTemplateRows = `repeat(${currentSize}, 1fr)`;
 
-  createBoardItem(smallSize);
+  createBoardItem(currentSize);
+});
+
+const clearButton = document.getElementById("clearButton");
+
+clearButton.addEventListener("click", (e) => {
+  createBoardItem(currentSize);
 });
 
 let mouseDown = false;
@@ -17,6 +25,7 @@ document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
 const createBoardItem = (size) => {
+  clearGrid();
   board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   for (let i = 0; i < size * size; i++) {
@@ -50,15 +59,14 @@ const changeButton = (id) => {
   buttonById.addEventListener("click", (e) => {
     changeButtonActive(buttonById);
 
-    const newSize =
+    currentSize =
       id == "big" ? bigSize : id == "medium" ? mediumSize : smallSize;
 
-    clearGrid();
-    createBoardItem(newSize);
+    createBoardItem(currentSize);
   });
 };
 
-const buttonSize = document.querySelectorAll("button.btn");
+const buttonSize = document.querySelectorAll("button.btn-size");
 buttonSize.forEach((button) => {
   const id = button.id;
   changeButton(id);
