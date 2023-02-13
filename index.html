@@ -9,29 +9,44 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <h1 class="title">Eatch a Sketch</h1>
-      <div class="board-wrapper">
-        <div class="button-wrapper tool-wrapper">
-          <button type="button" class="btn btn-mode" id="color">Color</button>
-          <button type="button" class="btn btn-mode" id="rainbow">
-            Rainbow
-          </button>
-          <button type="button" class="btn btn-mode" id="eraser">Eraser</button>
-          <button type="button" class="btn" id="clearButton">Clear</button>
-        </div>
-        <div>
-          <div class="button-wrapper">
-            <button class="btn btn-size" id="small" type="button">Small</button>
-            <button class="btn btn-size" id="medium" type="button">
-              Medium
+    <main>
+      <div class="container">
+        <h1 class="title">Eatch a Sketch</h1>
+        <div class="board-wrapper">
+          <div class="button-wrapper tool-wrapper">
+            <button type="button" class="btn btn-mode" id="color">Color</button>
+            <button type="button" class="btn btn-mode" id="rainbow">
+              Rainbow
             </button>
-            <button class="btn btn-size" id="big" type="button">Big</button>
+            <button type="button" class="btn btn-mode" id="eraser">
+              Eraser
+            </button>
+            <button type="button" class="btn" id="clearButton">Clear</button>
           </div>
-          <div class="board"></div>
+          <div>
+            <div class="button-wrapper">
+              <button class="btn btn-size" id="small" type="button">
+                Small
+              </button>
+              <button class="btn btn-size" id="medium" type="button">
+                Medium
+              </button>
+              <button class="btn btn-size" id="big" type="button">Big</button>
+            </div>
+            <div class="board"></div>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
+    <footer>
+      <p>
+        Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        <a href="https://github.com/fakhryandev">fakhryandev</a>
+      </p>
+    </footer>
   </body>
   <script src="scripts.js"></script>
 </html>
