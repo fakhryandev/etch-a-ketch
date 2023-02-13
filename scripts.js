@@ -39,6 +39,13 @@ const createBoardItem = (size) => {
 };
 
 const setCurrentMode = (mode) => {
+  if (mode !== "clear") {
+    const buttonById = document.getElementById(mode);
+    const activeMode = document.getElementsByClassName("active-mode");
+    if (activeMode.length !== 0) activeMode[0].classList.remove("active-mode");
+    buttonById.classList.add("active-mode");
+  }
+
   currentMode = mode;
 };
 
