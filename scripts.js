@@ -9,6 +9,8 @@ let currentMode = "color";
 document.addEventListener("DOMContentLoaded", () => {
   const btnSmall = document.getElementById("small");
   btnSmall.classList.add("btn-active");
+  const btnColor = document.getElementById("color");
+  btnColor.classList.add("active-mode");
   board.style.gridTemplateColumns = `repeat(${currentSize}, 1fr)`;
   board.style.gridTemplateRows = `repeat(${currentSize}, 1fr)`;
 
